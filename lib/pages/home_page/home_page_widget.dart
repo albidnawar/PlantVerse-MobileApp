@@ -146,6 +146,18 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       ),
                 ),
               ),
+              Align(
+                alignment: const AlignmentDirectional(0.9, -0.96),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8.0),
+                  child: Image.asset(
+                    'assets/images/dots.png',
+                    width: 28.0,
+                    height: 21.0,
+                    fit: BoxFit.fitWidth,
+                  ),
+                ),
+              ),
             ],
           ),
         ),

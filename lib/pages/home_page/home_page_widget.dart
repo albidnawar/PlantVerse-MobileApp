@@ -45,7 +45,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 alignment: const AlignmentDirectional(-1.0, -0.99),
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
-                  height: MediaQuery.sizeOf(context).height * 1.0,
+                  height: MediaQuery.sizeOf(context).height * 1.034,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.cover,
@@ -57,45 +57,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(0.06, 0.35),
-                child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
-                  },
-                  text: 'Sign Up',
-                  options: FFButtonOptions(
-                    width: 260.0,
-                    height: 55.0,
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                    iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: const Color(0x970D0C0C),
-                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Plus Jakarta Sans',
-                          color: Colors.white,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.normal,
-                        ),
-                    elevation: 0.0,
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(50.0),
-                      bottomRight: Radius.circular(50.0),
-                      topLeft: Radius.circular(50.0),
-                      topRight: Radius.circular(50.0),
-                    ),
-                  ),
-                ),
-              ),
-              Align(
                 alignment: const AlignmentDirectional(0.04, 0.51),
                 child: Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                   child: FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
+                    onPressed: () async {
+                      context.pushNamed('Login');
                     },
-                    text: 'Sign In',
+                    text: 'Get Started',
                     options: FFButtonOptions(
                       width: 260.0,
                       height: 55.0,
@@ -103,7 +72,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       iconPadding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleLarge.override(
                                 fontFamily: 'Urbanist',
@@ -123,27 +92,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(0.06, -0.67),
+                alignment: const AlignmentDirectional(-0.05, -0.29),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image.asset(
                     'assets/images/logo.png',
-                    width: 184.0,
-                    height: 47.0,
+                    width: 337.0,
+                    height: 54.0,
                     fit: BoxFit.contain,
                   ),
-                ),
-              ),
-              Align(
-                alignment: const AlignmentDirectional(0.0, 0.64),
-                child: Text(
-                  'Forget password?',
-                  style: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Plus Jakarta Sans',
-                        fontSize: 13.0,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w300,
-                      ),
                 ),
               ),
               Align(

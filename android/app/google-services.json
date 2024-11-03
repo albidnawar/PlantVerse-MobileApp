@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "193887370198",
+    "project_id": "market-102etc",
+    "storage_bucket": "market-102etc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193887370198:android:d6af24d2714092a7b30277",
+        "android_client_info": {
+          "package_name": "com.mycompany.plantverse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyU80rwWNzPXBGxAVNmKKK047CPub5lKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -533,8 +534,27 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           0.0, 0.0, 0.0, 16.0),
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
-                                                      context.pushNamed(
-                                                          'landing_page');
+                                                      GoRouter.of(context)
+                                                          .prepareAuthEvent();
+
+                                                      final user =
+                                                          await authManager
+                                                              .signInWithEmail(
+                                                        context,
+                                                        _model
+                                                            .emailAddressTextController
+                                                            .text,
+                                                        _model
+                                                            .passwordTextController
+                                                            .text,
+                                                      );
+                                                      if (user == null) {
+                                                        return;
+                                                      }
+
+                                                      context.goNamedAuth(
+                                                          'landing_page',
+                                                          context.mounted);
                                                     },
                                                     text: 'Sign In',
                                                     options: FFButtonOptions(
@@ -1040,8 +1060,43 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           0.0, 0.0, 0.0, 16.0),
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
-                                                      context.pushNamed(
-                                                          'landing_page');
+                                                      GoRouter.of(context)
+                                                          .prepareAuthEvent();
+                                                      if (_model
+                                                              .passwordCreateTextController
+                                                              .text !=
+                                                          _model
+                                                              .passwordConfirmTextController
+                                                              .text) {
+                                                        ScaffoldMessenger.of(
+                                                                context)
+                                                            .showSnackBar(
+                                                          const SnackBar(
+                                                            content: Text(
+                                                              'Passwords don\'t match!',
+                                                            ),
+                                                          ),
+                                                        );
+                                                        return;
+                                                      }
+
+                                                      final user = await authManager
+                                                          .createAccountWithEmail(
+                                                        context,
+                                                        _model
+                                                            .emailAddressCreateTextController
+                                                            .text,
+                                                        _model
+                                                            .passwordCreateTextController
+                                                            .text,
+                                                      );
+                                                      if (user == null) {
+                                                        return;
+                                                      }
+
+                                                      context.goNamedAuth(
+                                                          'landing_page',
+                                                          context.mounted);
                                                     },
                                                     text: 'Create Account',
                                                     options: FFButtonOptions(
